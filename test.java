@@ -29,22 +29,7 @@ public class UserTest {
 
     }
 
-    public static void addUser() throws Exception{
-        String resource = "mybatis-config.xml";
-        InputStream inputStream = Resources.getResourceAsStream(resource);
-        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
-        SqlSession session=sqlSessionFactory.openSession();
-        User u=new User();
-        u.setUname("zhangsan");
-        u.setUpwd("123456");
-        u.setUsex("男");
-        u.setUphone("15311111111");
-        int i=session.update("addUser",u);
-        session.commit();
-        System.out.println(i);
-        session.close();
-
-    }
+   
     public static void main(String[] args) throws Exception{
         //读取核心配置文件
         addUser();
